@@ -5,7 +5,7 @@
     --color-gold:#d4af37;
 }
 .sec_about{
-    background-color: #0B0F19;
+    background-color: #0c111f;
 }
 
 .sec_about .container{
@@ -32,12 +32,13 @@
 .sec_about .container .description{
     width: 60%;
 }
-.sec_about .container h2{
+.sec_about h2{
      font-size: clamp(2.25rem, 4vw, 3.25rem);
      line-height: 1.1;
       font-weight: 700;
      margin: 0 0 1.25rem;
      color: #f5f6f8;
+     text-align: center;
 }
 .sec_about .container .description p{
     color: var(--color-text);
@@ -54,13 +55,13 @@
 }
 @media (max-width: 640px){
     .sec_about .container{
-    height: 60vh;
+    height: 50vh;
     flex-direction: column;
     justify-content: start;
     gap: 10px;
     width: 95%;
 }
-.sec_about .container h2{
+.sec_about h2{
     font-size: 24px;
     font-weight: 600;
     padding-top: 10px;
@@ -81,4 +82,24 @@
     width: 95%;
 }
 
+}
+@media (min-width: 641px) and (max-width:1024px){
+
+.sec_about h2{
+    font-size: 28px;
+    font-weight: 600;
+    padding-top: 30px;
+    
+}
+    .sec_about .img_about img{
+
+    width: 250px;
+    height: 250px;
+}
+.sec_about .container .description p{
+    font-size: 14px;
+}
+.sec_about .container .description p span{
+    font-size: 14px; 
+}
 }

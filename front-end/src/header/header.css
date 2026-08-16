@@ -19,7 +19,7 @@
 }
 .navbar .logo{
     margin-left: 10px;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 600;
     position: relative;
     padding: 0 16px;
@@ -31,7 +31,7 @@
     height: 10px;
     border-radius: 50%;
     position: absolute;
-    top: 40%;
+    top: 38%;
     left: 0;
     background-color: var(--color-accent);
     box-shadow: 0px 0px 15px var(--color-accent);
@@ -66,16 +66,26 @@
     background-color: var(--color-accent);
     box-shadow: 0px 0px 12px var(--color-accent);
 }
+#mobile{
+    display: none;
+}
 @media (max-width: 640px){
+    #mobile{
+    display: initial;
+}
+    .flex-none span svg{
+       font-size: 25px;
+       margin-right: 10px;
+    }
     .navbar{
-        max-height: 47px;
+        min-height: 60px;
     }
     .navbar .logo{
         font-size: 22px;
     
     }
     .menu span svg{
-        font-size: 20px;
+        font-size: 26px;
         position: absolute;
         top: 10px;
         left: 5px;
@@ -98,6 +108,22 @@
     .active{
         right: 0px;
        transition: all 0.3s ease-out;
+    }
+}
+@media (min-width: 641px) and (max-width:1024px){
+    .navbar{
+        min-height: 67px;
+    }
+    .navbar .logo{
+        font-size: 26px;
+    
+    }
+    
+    .menu{
+       margin-right: 10px;
+       gap: 12px;
+       
+       
     }
 }
 

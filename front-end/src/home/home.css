@@ -59,15 +59,17 @@
 }
 @media (max-width: 640px) {
     .hero_section{
-    height: 80vh;
+    height: 65vh;
 }
   .hero_section .container{
     padding:20px ;
-    padding-top: 80px;
+    padding-top: 100px;
     width: 100%;
 }
 .hero_section .profile{
     align-self: start;
+    margin: auto;
+
 }
 .hero_section .profile img{
     width: 130px;
@@ -76,7 +78,7 @@
     
 }
 .hero_section .container .content{
-    width: 60%;
+    width: 50%;
 }
   .hero_section .container .content h2{
     font-size: 20px;
@@ -95,6 +97,37 @@
   padding: 24px 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 14px;
+}
+@media (min-width: 641px) and (max-width:1024px){
+    .hero_section{
+    height: 80vh;
+}
+  .hero_section .container{
+    padding:20px ;
+    padding-top: 80px;
+    width: 100%;
+}
+.hero_section .profile{
+    align-self: center;
+    margin: auto;
+}
+.hero_section .profile img{
+    width: 230px;
+    height: 230px;
+    margin-top: 20px;
+    
+}
+.hero_section .container .content{
+    width: 60%;
+}
+  .hero_section .container .content h2{
+    font-size: 27px;
+    font-weight: 500;
+  }
+  .hero_section .container .content p{
+    font-size: 16px;
+    letter-spacing: 1px;
+}
 }
 
 

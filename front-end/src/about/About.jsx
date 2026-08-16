@@ -3,8 +3,9 @@ import "./about.css";
 function About() {
   return (
     <div id="about" className="sec_about">
+      <h2>About me</h2>
       <div className="container">
-        <h2>About me</h2>
+        
         <div className="img_about">
           <img src="/image/profile.jpg" alt="" />
         </div>

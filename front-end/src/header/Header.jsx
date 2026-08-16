@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import "./header.css"
 
 function Header() {
-  const [active,setActive]=useState("active");
+  const [active,setActive]=useState("");
   const handleChange=()=>{
     setActive(active=="" ? "active" : "")
   }
@@ -13,16 +13,16 @@ function Header() {
     <div>
       <div className="navbar bg-base-100 shadow-sm">
         <div className="flex-1">
-          <Link className="logo btn btn-ghost text-xl">Bouba</Link>  
+          <Link className="logo btn btn-ghost text-2xl">Bouba</Link>  
         </div>
         <div className="flex-none">
           {active==""? (
-            <span className="text-white-600" onClick={handleChange} ><FaBars/></span>
+            <span id="mobile" className="text-white-600" onClick={handleChange} ><FaBars/></span>
           ) :""}
           
           <ul className={`menu menu-horizontal px-1 ${active}`}>
             {active=="active" ? (
-            <span onClick={handleChange} className="text-white-600" ><AiOutlineClose/></span>
+            <span id="mobile" onClick={handleChange} className="text-white-600" ><AiOutlineClose/></span>
             ) :""}
             <li>
               <a href="#/" className="act" >Home</a>
