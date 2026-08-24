@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import Header from './header/Header'
-import { Route, Routes } from 'react-router-dom'
 import Home from './home/Home'
-
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 function App() {
   

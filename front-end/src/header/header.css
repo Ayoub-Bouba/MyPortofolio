@@ -1,129 +1,133 @@
-:root{
-    --color-accent:#6366f1;
-    --color-bg:#0f172a;
-    --color-text:#f1f5f9;
+:root {
+  --color-accent: #6366f1;
+  --color-bg: #0f172a;
+  --color-text: #f1f5f9;
 }
-.navbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6px;
-    background-color: #46477c42;
-    color: var(--color-text);
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;left: 0;
-    width: 100%;
-    z-index: 999;
-    overflow: visible;
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  background-color: #46477c42;
+  backdrop-filter: blur(5px);
+  color: var(--color-text);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  overflow: visible;
 }
-.navbar .logo{
-    margin-left: 10px;
-    font-size: 32px;
-    font-weight: 600;
-    position: relative;
-    padding: 0 16px;
-    border: none;
+.navbar .logo {
+  margin-left: 10px;
+  font-size: 32px;
+  font-weight: 600;
+  position: relative;
+  padding: 0 16px;
+  border: none;
 }
-.navbar .logo::after{
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    position: absolute;
-    top: 38%;
-    left: 0;
-    background-color: var(--color-accent);
-    box-shadow: 0px 0px 15px var(--color-accent);
+.navbar .logo::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 38%;
+  left: 0;
+  background-color: var(--color-accent);
+  box-shadow: 0px 0px 15px var(--color-accent);
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-right: 370px;
+}
+.menu li a {
+  position: relative;
 
-}
-.menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-right: 370px;
-}
-.menu li a{
-    position: relative;
-    
-    padding: 10px 12px;
-    transition: all 0.3s ease;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
 }
 .menu li a:hover,
-.menu li a.act{
-    color: var(--color-accent);
-}
-.menu li a:hover::after,
-.menu li a.act::after{
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    position: absolute;
-    top: 45%;
-    left: 0;
-    background-color: var(--color-accent);
-    box-shadow: 0px 0px 12px var(--color-accent);
-}
-#mobile{
-    display: none;
-}
-@media (max-width: 640px){
-    #mobile{
-    display: initial;
-}
-    .flex-none span svg{
-       font-size: 25px;
-       margin-right: 10px;
-    }
-    .navbar{
-        min-height: 60px;
-    }
-    .navbar .logo{
-        font-size: 22px;
-    
-    }
-    .menu span svg{
-        font-size: 26px;
-        position: absolute;
-        top: 10px;
-        left: 5px;
-    }
-    .menu{
-       margin-right: 0;
-       flex-direction: column;
-       align-items: start;
-       justify-content: start;
-       position: absolute;
-       width: 120px;
-       right: -200px;
-       top: 0;
-       gap: 10px;
-       padding-top: 50px;
-       background-color: #0f172ac2;
-       height: 100vh;
-       transition: all 0.3s ease-out;
-    }
-    .active{
-        right: 0px;
-       transition: all 0.3s ease-out;
-    }
-}
-@media (min-width: 641px) and (max-width:1024px){
-    .navbar{
-        min-height: 67px;
-    }
-    .navbar .logo{
-        font-size: 26px;
-    
-    }
-    
-    .menu{
-       margin-right: 10px;
-       gap: 12px;
-       
-       
-    }
+.menu li a.act {
+  color: var(--color-accent);
 }
 
+.menu li a:hover::after,
+.menu li a.act::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  background-color: var(--color-accent);
+  box-shadow: 0px 0px 12px var(--color-accent);
+}
+#mobile {
+  display: none;
+}
+@media (max-width: 667px) {
+  #mobile {
+    display: initial;
+    transition: all 0.3s ease-in-out;
+  }
+  .flex-none span:hover {
+    color: var(--color-accent);
+  }
+  .flex-none span svg {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  .navbar {
+    min-height: 60px;
+  }
+  .navbar .logo {
+    font-size: 22px;
+  }
+  .menu span svg {
+    font-size: 26px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+  }
+  .menu {
+    margin-right: 0;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    position: absolute;
+    width: 180px;
+    right: -300px;
+    top: 0;
+    gap: 10px;
+    padding-top: 50px;
+    background-color: #0f172ac2;
+    height: 100vh;
+    transition: all 0.5 s ease-in-out;
+  }
+  .menu li {
+    padding: 4px 8px;
+  }
+  .active {
+    right: 0px;
+    transition: all 0.5s ease-in-out;
+  }
+}
+@media (min-width: 668px) and (max-width: 1024px) {
+  .navbar {
+    min-height: 67px;
+  }
+  .navbar .logo {
+    font-size: 26px;
+  }
+
+  .menu {
+    margin-right: 10px;
+    gap: 12px;
+  }
+}

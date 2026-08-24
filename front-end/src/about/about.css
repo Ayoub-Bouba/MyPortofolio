@@ -35,8 +35,8 @@
 .sec_about h2{
      font-size: clamp(2.25rem, 4vw, 3.25rem);
      line-height: 1.1;
-      font-weight: 700;
-     margin: 0 0 1.25rem;
+     font-weight: 700;
+     padding: 10px;
      color: #f5f6f8;
      text-align: center;
 }
@@ -55,7 +55,6 @@
 }
 @media (max-width: 640px){
     .sec_about .container{
-    height: 50vh;
     flex-direction: column;
     justify-content: start;
     gap: 10px;

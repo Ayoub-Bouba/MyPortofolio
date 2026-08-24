@@ -1,80 +1,38 @@
-import { useState } from "react";
-import {
-  SiReact,
-  SiTailwindcss,
-  SiJavascript,
-  SiVite,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiPython,
-  SiGit,
-  SiFigma,
-  SiC,
-} from "react-icons/si";
-import { FaCode } from "react-icons/fa";
 import "./skills.css";
+import { categories } from "../../constants";
+import SkillCard from "./SkillCard";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-const categories = [
-  {
-    label: "Frontend",
-    accent: "#38BDF8",
-    skills: [
-      { name: "React", icon: SiReact},
-      { name: "Tailwind CSS", icon: SiTailwindcss},
-      { name: "JavaScript", icon: SiJavascript},
-      { name: "Vite", icon: SiVite},
-    ],
-  },
-  {
-    label: "Backend",
-    accent: "#34D399",
-    skills: [
-      { name: "Node.js", icon: SiNodedotjs},
-      { name: "Express", icon: SiExpress},
-      { name: "MongoDB", icon: SiMongodb},
-    ],
-  },
-  {
-    label: "Outils & Autres",
-    accent: "#FBBF24",
-    skills: [
-      { name: "Git", icon: SiGit},
-      { name: "Python", icon: SiPython},
-      { name: "Prog C", icon: SiC}
-    ],
-  },
-];
 
-function SkillCard({ skill, accent }) {
-  const [hover, setHover] = useState(false);
-  const Icon = skill.icon || FaCode;
-
-  return (
-    <div
-      className="skill-card"
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <div className="skill-card-top">
-        <div
-          className="skill-icon"
-          style={{
-            backgroundColor: hover ? accent : "rgba(255,255,255,0.06)",
-            color: hover ? "#0B0F19" : accent,
-          }}
-        >
-          <Icon />
-        </div>
-        <span className="skill-name">{skill.name}</span>
-      </div>
-
-      
-    </div>
-  );
-}
 
 export default function Skills() {
+  useGSAP(()=>{
+    const skillsTimeline=gsap.timeline({
+      scrollTrigger:{
+        trigger:"#skills",
+        start:"top 80%"
+      }
+    })
+    skillsTimeline
+    .from(".skills-header p",{
+      opacity:0,
+      yPercent:100,
+      ease:"power1.inOut",
+    })
+    .from(".skills-header h2",{
+      opacity:0,
+      yPercent:100,
+      ease:"power1.inOut",
+      stagger:0.02
+    })
+    .from(".skills-grid div",{
+      opacity:0,
+      ease:"power1.inOut",
+      stagger:0.02
+    },"<50%")
+
+  })
   return (
     <section id="skills" className="skills-section">
       <div className="skills-container">

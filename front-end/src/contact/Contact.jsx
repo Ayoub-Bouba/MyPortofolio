@@ -1,15 +1,39 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/all";
+import gsap from "gsap";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
+  useGSAP(()=>{
+    const titleSplit = SplitText.create("#contact h2", { type: "words" });
 
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#contact",
+        start: "top center",
+      },
+      ease: "power1.inOut",
+    });
+
+    timeline
+      .from(titleSplit.words, {
+        opacity: 0,
+        yPercent: 100,
+        stagger: 0.02,
+      })
+      .from("#contact h3, #contact p", {
+        opacity: 0,
+        yPercent: 100,
+        stagger: 0.02,
+      })
+  })
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("sending");

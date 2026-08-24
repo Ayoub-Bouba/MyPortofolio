@@ -1,106 +1,37 @@
-import { useState } from "react";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
 import "./project.css";
+import { projects } from "../../constants";
+import ProjectCard from "./ProjectCard";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-const projects = [
-  {
-    title: "Timora",
-    description:
-      "Luxury watch marketplace with a dark navy & gold design, product gallery, cart, and WhatsApp sharing.",
-    image: "/image/project/timora.png",
-    tags: ["React", "Tailwind", "React Router", "json-server"],
-    liveUrl: "https://bespoke-cocada-ba08f2.netlify.app/",
-    codeUrl: "https://github.com/Ayoub-Bouba/watchmarket-fullstack",
-    accent: "#D4AF37",
-  },
-  {
-    title: "Velora",
-    description:
-      "Online fashion store built with HTML, CSS, and JavaScript, hosted on Netlify.",
-    image: "/image/project/timora.png",
-    tags: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "https://lively-pixie-7097ae.netlify.app/",
-    codeUrl: "https://github.com/Ayoub-Bouba/My-project/tree/main/MarketHub",
-    accent: "#F472B6",
-  },
-  {
-    title: "Poignet",
-    description:
-      "Watch store with Swiper sliders and dummyjson API integration for products.",
-    image: "/projects/poignet.jpg",
-    tags: ["React", "Swiper", "API REST"],
-    liveUrl: "https://poignet.netlify.app/",
-    codeUrl: "https://github.com/Ayoub-Bouba/ShopMarket",
-    accent: "#38BDF8",
-  },
-  
-];
-
-function ProjectCard({ project }) {
-  const [hover, setHover] = useState(false);
-
-  return (
-    <div
-      className="project-card"
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      style={{ borderColor: hover ? project.accent : "rgba(255,255,255,0.1)" }}
-    >
-      <div
-        className="project-bg-image"
-        style={{
-          backgroundImage: `${project.accent}`,
-          opacity: hover ? 1 : 0,
-        }}
-      />
-      <div className="project-bg-shade" style={{ opacity: hover ? 1 : 0 }} />
-
-      <div className="project-body">
-        <h3 className="project-title">{project.title}</h3>
-        <p className="project-description" style={{ opacity: hover ? 0 : 1 }}>
-          {project.description}
-        </p>
-
-        <div className="project-tags" style={{ opacity: hover ? 0 : 1 }}>
-          {project.tags.map((tag) => (
-            <span key={tag} className="project-tag">
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <div
-          className="project-links"
-          style={{
-            opacity: hover ? 1 : 0,
-            pointerEvents: hover ? "auto" : "none",
-          }}
-        >
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="project-icon-btn"
-            style={{ backgroundColor: project.accent }}
-          >
-            <FiExternalLink />
-          </a>
-          <a
-            href={project.codeUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="project-icon-btn"
-            style={{ backgroundColor: project.accent }}
-          >
-            <FiGithub />
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function ProjectsSection() {
+  useGSAP(()=>{
+    const projTimeline=gsap.timeline({
+      scrollTrigger:{
+        trigger:"#projects",
+        start:"top 70%"
+      }
+    })
+    projTimeline
+    .from(".projects-header p",{
+      opacity:0,
+      yPercent:100,
+      ease:"power1.inOut",
+    })
+    .from(".projects-header h2",{
+      opacity:0,
+      yPercent:100,
+      ease:"power1.inOut",
+      stagger:0.02
+    })
+    .from(".projects-grid div",{
+      opacity:0,
+      ease:"power1.inOut",
+      stagger:0.02
+    },"<50%")
+
+  })
   return (
     <section id="projects" className="projects-section">
       <div className="projects-container">
