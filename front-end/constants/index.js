@@ -52,15 +52,25 @@ const categories = [
 ];
 const projects = [
   {
-    title: "Timora",
-    description:
-      "Luxury watch marketplace with a dark navy & gold design, product gallery, cart, and WhatsApp sharing.",
-    image: "/image/project/timora.png",
-    tags: ["React", "Tailwind", "React Router", "json-server"],
-    liveUrl: "https://bespoke-cocada-ba08f2.netlify.app/",
-    codeUrl: "https://github.com/Ayoub-Bouba/watchmarket-fullstack",
-    accent: "#D4AF37",
-  },
+  title: "Kofia",
+  description:
+    "A modern showcase site with a clean interface and a polished user experience.",
+  image: "/projects/kofia.jpg",
+  tags: ["React", "Tailwind"],
+  liveUrl: "https://mellifluous-wisp-9a737a.netlify.app/",
+  codeUrl: "https://github.com/Ayoub-Bouba/Kofia",
+  accent: "#A78BFA",
+},
+  {
+  title: "Cocktails",
+  description:
+    "A visually rich showcase site for cocktails, featuring clean layout and smooth presentation.",
+  image: "/projects/cocktails.jpg",
+  tags: ["React", "Tailwind"],
+  liveUrl: "https://incredible-mandazi-e1aad5.netlify.app/",
+  codeUrl: "https://github.com/Ayoub-Bouba/GsapProject",
+  accent: "#F87171",
+},
   {
     title: "Velora",
     description:
@@ -83,11 +93,6 @@ const projects = [
   },
   
 ];
-
-
-
-
-
 
 export {
     PortfLinks,
